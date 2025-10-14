@@ -405,6 +405,72 @@
                 });
             }
         });
-    </script>
-</body>
-</html>
+  <!-- ... mantém todo o cabeçalho e seções anteriores ... -->
+
+<!-- Featured Games -->
+<section id="jogos" class="py-16 bg-dark/50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-4">Jogos Disponíveis</h2>
+        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Todos os jogos com efeitos, animações e visual aprimorado. 
+            Interface fluida e controles otimizados para PC e celular.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Lista completa dos 24 jogos -->
+            <script>
+                const jogos = [
+                    {name:"Snake",desc:"Clássico jogo da cobrinha com controles suaves e visual moderno",icon:"fas fa-snake",color:"from-green-500 to-emerald-500"},
+                    {name:"Tetris",desc:"Quebre blocos e faça combinações neste clássico atemporal",icon:"fas fa-cubes",color:"from-red-500 to-pink-500"},
+                    {name:"Pong com IA",desc:"Desafie a inteligência artificial neste clássico dos videogames",icon:"fas fa-table-tennis",color:"from-blue-500 to-cyan-500"},
+                    {name:"Memória de Frutas",desc:"Teste sua memória com cartas de frutas coloridas e animadas",icon:"fas fa-brain",color:"from-yellow-500 to-orange-500"},
+                    {name:"Flappy Bird",desc:"Desvie dos obstáculos neste divertido jogo de voo",icon:"fas fa-dove",color:"from-indigo-500 to-purple-500"},
+                    {name:"Pac-Man",desc:"Coma todas as pastilhas e fuja dos fantasmas",icon:"fas fa-ghost",color:"from-yellow-400 to-orange-400"},
+                    {name:"Dino Run",desc:"Corra pelo deserto e evite obstáculos",icon:"fas fa-dragon",color:"from-gray-500 to-yellow-500"},
+                    {name:"Campo Minado",desc:"Descubra todos os campos sem explodir as minas",icon:"fas fa-bomb",color:"from-red-600 to-red-400"},
+                    {name:"2048",desc:"Combine os números e chegue ao 2048",icon:"fas fa-th",color:"from-green-400 to-green-600"},
+                    {name:"Corrida de Carros",desc:"Seja o mais rápido na pista",icon:"fas fa-car",color:"from-blue-400 to-blue-600"},
+                    {name:"Buriti Cup (Futebol)",desc:"Marque gols e vença a competição",icon:"fas fa-futbol",color:"from-green-500 to-yellow-500"},
+                    {name:"Clicker Game",desc:"Clique e ganhe pontos infinitos",icon:"fas fa-hand-pointer",color:"from-pink-500 to-purple-500"},
+                    {name:"Space Invaders",desc:"Defenda a Terra dos invasores espaciais",icon:"fas fa-rocket",color:"from-indigo-500 to-blue-500"},
+                    {name:"Plataforma estilo Mario",desc:"Pule, corra e colete moedas",icon:"fas fa-flag-checkered",color:"from-red-500 to-yellow-500"},
+                    {name:"Aventura RPG",desc:"Explore o mundo e complete missões",icon:"fas fa-dragon",color:"from-purple-500 to-pink-500"},
+                    {name:"Tower Defense",desc:"Proteja sua base das ondas inimigas",icon:"fas fa-shield-alt",color:"from-blue-600 to-cyan-500"},
+                    {name:"Jogo de Pesca",desc:"Pesque peixes raros e colete recompensas",icon:"fas fa-fish",color:"from-blue-400 to-green-400"},
+                    {name:"SimCity Mini",desc:"Construa sua cidade e administre recursos",icon:"fas fa-city",color:"from-gray-400 to-gray-600"},
+                    {name:"Xadrez",desc:"Jogue Xadrez contra o computador",icon:"fas fa-chess",color:"from-black to-gray-700"},
+                    {name:"Jogo da Velha Online",desc:"Clássico jogo da velha multiplayer",icon:"fas fa-times",color:"from-red-500 to-pink-500"},
+                    {name:"Cartas UNO",desc:"Combine cores e números para vencer",icon:"fas fa-clone",color:"from-red-500 to-yellow-500"},
+                    {name:"Breakout",desc:"Quebre todos os blocos sem perder a bola",icon:"fas fa-square",color:"from-purple-500 to-pink-500"},
+                    {name:"Jogo de Tiro Retro",desc:"Atire nos inimigos e sobreviva",icon:"fas fa-crosshairs",color:"from-red-500 to-orange-500"},
+                    {name:"Puzzle de Cores",desc:"Siga a sequência de cores e treine sua memória",icon:"fas fa-puzzle-piece",color:"from-green-500 to-blue-500"}
+                ];
+
+                const container = document.currentScript.parentNode;
+                jogos.forEach(j => {
+                    container.innerHTML += `
+                        <div class="game-card bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-primary">
+                            <div class="w-16 h-16 bg-gradient-to-r ${j.color} rounded-xl flex items-center justify-center mb-4 mx-auto">
+                                <i class="${j.icon} text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-center mb-3">${j.name}</h3>
+                            <p class="text-gray-400 text-center text-sm mb-4">${j.desc}</p>
+                            <button class="w-full bg-gray-700 hover:bg-primary text-white py-2 rounded-lg transition-colors play-btn" data-game="${j.name}">
+                                Jogar
+                            </button>
+                        </div>
+                    `;
+                });
+
+                // Remove alerta e deixa pronto para chamar seu JS separado
+                container.querySelectorAll('.play-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const gameName = btn.dataset.game;
+                        // Aqui você chama a função do seu JS para iniciar o jogo
+                        console.log(`Iniciando ${gameName}...`);
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</section>
