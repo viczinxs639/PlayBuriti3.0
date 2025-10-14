@@ -3,7 +3,6 @@
 // ============================
 // CONFIGURAÇÕES DE JOGOS
 // ============================
-<script>
 const jogos = [
     "snake","tetris","pong","memoria","flappy","pacman","dino","campoMinado",
     "game2048","corrida","futebol","clicker","space","mario","rpg","tower",
@@ -1003,4 +1002,18 @@ function jogoPuzzleCores(container){
 
     nextRound();
 }
-</script>
+const menu = document.getElementById("menuJogos");
+
+jogos.forEach(jogo => {
+    let btn = document.createElement("button");
+    btn.textContent = jogo.charAt(0).toUpperCase() + jogo.slice(1);
+    btn.style.cssText = `
+        padding:10px 15px; margin:5px; background:#2563eb; color:white;
+        border:none; border-radius:8px; cursor:pointer; font-weight:bold;
+        transition: all 0.3s;
+    `;
+    btn.onmouseover = () => btn.style.background = "#7c3aed";
+    btn.onmouseout = () => btn.style.background = "#2563eb";
+    btn.onclick = () => abrirJogo(jogo);
+    menu.appendChild(btn);
+});
