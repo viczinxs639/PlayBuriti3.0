@@ -3,6 +3,7 @@
 // ============================
 // CONFIGURAÇÕES DE JOGOS
 // ============================
+<script>
 const jogos = [
     "snake","tetris","pong","memoria","flappy","pacman","dino","campoMinado",
     "game2048","corrida","futebol","clicker","space","mario","rpg","tower",
@@ -1002,3 +1003,4 @@ function jogoPuzzleCores(container){
 
     nextRound();
 }
+</script>
