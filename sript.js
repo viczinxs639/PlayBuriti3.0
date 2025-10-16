@@ -1,5 +1,3 @@
-// script.js - Play Buriti (Todos os 24 jogos integrados)
-
 // ============================
 // CONFIGURAÇÕES DE JOGOS
 // ============================
@@ -1018,6 +1016,13 @@ jogos.forEach(jogo => {
     menu.appendChild(btn);
 });
 
+// Associa todos os botões do menu à função abrirJogo
+document.querySelectorAll("#menuJogos button").forEach(botao => {
+    botao.addEventListener("click", () => {
+        const nomeJogo = botao.getAttribute("data-jogo");
+        abrirJogo(nomeJogo);
+    });
+});
 // Associa todos os botões do menu à função abrirJogo
 document.querySelectorAll("#menuJogos button").forEach(botao => {
     botao.addEventListener("click", () => {
