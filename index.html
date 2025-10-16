@@ -669,28 +669,39 @@
                 }
             });
         });
+        
+    <body>
+  
+  <h1>Bem-vindo ao Play Buriti!</h1>
 
-        // Game card interaction
-        document.querySelectorAll('.game-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const gameName = this.querySelector('h3').textContent;
-                alert(`Iniciando ${gameName}... Em desenvolvimento!`);
-            });
-        });
+  <div id="menuJogos">
+    <button data-jogo="snake">Snake</button>
+    <button data-jogo="tetris">Tetris</button>
+    <button data-jogo="pong">Pong</button>
+    <button data-jogo="memoria">Memória</button>
+    <button data-jogo="flappy">Flappy Bird</button>
+    <button data-jogo="pacman">Pac-Man</button>
+    <button data-jogo="dino">Dino Run</button>
+    <button data-jogo="campoMinado">Campo Minado</button>
+    <button data-jogo="game2048">2048</button>
+    <button data-jogo="corrida">Corrida</button>
+    <button data-jogo="futebol">Futebol</button>
+    <button data-jogo="clicker">Clicker</button>
+    <button data-jogo="space">Space Shooter</button>
+    <button data-jogo="mario">Mario</button>
+    <button data-jogo="rpg">RPG</button>
+    <button data-jogo="tower">Tower Defense</button>
+    <button data-jogo="pesca">Pesca</button>
+    <button data-jogo="simcity">SimCity</button>
+    <button data-jogo="xadrez">Xadrez</button>
+    <button data-jogo="velha">Jogo da Velha</button>
+    <button data-jogo="quiz">Quiz</button>
+    <button data-jogo="labirinto">Labirinto</button>
+    <button data-jogo="batalha">Batalha</button>
+  </div>
 
-        // CTA buttons
-        document.querySelectorAll('button').forEach(button => {
-            if (button.textContent.includes('Jogar Agora') || button.textContent.includes('Começar')) {
-                button.addEventListener('click', function() {
-                    alert('🚀 Play Buriti - Plataforma em desenvolvimento!\n\nEm breve: Mais jogos e recursos incríveis!');
-                });
-            }
-        });
-            </script>
-        </div>
-    </div>
-</section>
+  <div id="areaJogo"></div>
 
-    <div id="menuJogos" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;">
-  <!-- Os botões serão gerados via JS -->
-</div>
+  <script src="script.js"></script>
+</body>
+
